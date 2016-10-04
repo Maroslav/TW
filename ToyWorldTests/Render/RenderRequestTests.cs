@@ -3,7 +3,7 @@ using System.Drawing;
 using GoodAI.ToyWorld.Control;
 using RenderingBase.RenderRequests;
 using ToyWorldTests.Game;
-using World.ToyWorldCore;
+using Simulation.ToyWorldCore;
 using Xunit;
 
 namespace ToyWorldTests.Render

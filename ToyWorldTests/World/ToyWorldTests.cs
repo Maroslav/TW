@@ -3,10 +3,10 @@ using Moq;
 using System.IO;
 using TmxMapSerializer.Elements;
 using TmxMapSerializer.Serializer;
-using World.Atlas.Layers;
-using World.GameActors;
-using World.GameActors.Tiles;
-using World.ToyWorldCore;
+using Simulation.Atlas.Layers;
+using Simulation.GameActors;
+using Simulation.GameActors.Tiles;
+using Simulation.ToyWorldCore;
 using Xunit;
 
 namespace ToyWorldTests.World

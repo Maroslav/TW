@@ -1,9 +1,9 @@
 ﻿using System;
 using VRageMath;
-using World.Atlas.Layers;
-using World.GameActors.Tiles.Background;
-using World.GameActors.Tiles.Obstacle;
-using World.ToyWorldCore;
+using Simulation.Atlas.Layers;
+using Simulation.GameActors.Tiles.Background;
+using Simulation.GameActors.Tiles.Obstacle;
+using Simulation.ToyWorldCore;
 using Xunit;
 
 namespace ToyWorldTests.World

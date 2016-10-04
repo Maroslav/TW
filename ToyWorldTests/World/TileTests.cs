@@ -1,6 +1,6 @@
 ﻿using System;
-using World.GameActors.Tiles;
-using World.GameActors.Tiles.Background;
+using Simulation.GameActors.Tiles;
+using Simulation.GameActors.Tiles.Background;
 using Xunit;
 
 namespace ToyWorldTests.World

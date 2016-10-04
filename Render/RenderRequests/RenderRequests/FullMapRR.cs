@@ -4,7 +4,7 @@ using OpenTK.Graphics.OpenGL;
 using RenderingBase.RenderObjects.Geometries;
 using RenderingBase.Renderer;
 using VRageMath;
-using World.ToyWorldCore;
+using Simulation.ToyWorldCore;
 using RectangleF = VRageMath.RectangleF;
 
 namespace Render.RenderRequests

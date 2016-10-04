@@ -4,7 +4,7 @@ using OpenTK.Graphics.OpenGL;
 using RenderingBase.Renderer;
 using RenderingBase.RenderObjects.Buffers;
 using TmxMapSerializer.Elements;
-using World.ToyWorldCore;
+using Simulation.ToyWorldCore;
 
 namespace Render.RenderRequests
 {

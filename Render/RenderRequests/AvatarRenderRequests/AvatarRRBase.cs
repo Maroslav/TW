@@ -2,7 +2,7 @@
 using GoodAI.ToyWorld.Control;
 using RenderingBase.Renderer;
 using VRageMath;
-using World.ToyWorldCore;
+using Simulation.ToyWorldCore;
 
 namespace Render.RenderRequests
 {

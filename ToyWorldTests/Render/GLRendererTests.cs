@@ -10,7 +10,7 @@ using RenderingBase.Renderer;
 using RenderingBase.RenderRequests;
 using Utils.VRageRIP.Lib.Extensions;
 using VRageMath;
-using World.ToyWorldCore;
+using Simulation.ToyWorldCore;
 using Xunit;
 
 namespace ToyWorldTests.Render

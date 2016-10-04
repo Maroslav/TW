@@ -3,11 +3,11 @@ using System.Linq;
 using TmxMapSerializer.Elements;
 using TmxMapSerializer.Serializer;
 using VRageMath;
-using World.Atlas;
-using World.GameActors;
-using World.GameActors.GameObjects;
-using World.GameActors.Tiles;
-using World.ToyWorldCore;
+using Simulation.Atlas;
+using Simulation.GameActors;
+using Simulation.GameActors.GameObjects;
+using Simulation.GameActors.Tiles;
+using Simulation.ToyWorldCore;
 using Xunit;
 
 namespace ToyWorldTests.World

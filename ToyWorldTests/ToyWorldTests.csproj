@@ -141,10 +141,6 @@
     <Compile Include="World\WallsTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Libs\TypeMap\TypeMap\TypeMap.csproj">
-      <Project>{86955c47-2a02-41a4-ab32-c9e592eb2971}</Project>
-      <Name>TypeMap</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\BrainSimToyWorld\Module\BrainSimToyWorld.csproj">
       <Project>{8c381b5a-3fd7-4311-9c42-f8115587e5fd}</Project>
       <Name>BrainSimToyWorld</Name>
@@ -161,6 +157,10 @@
       <Project>{c1527127-dd8c-4076-a0a7-39eb2ef23787}</Project>
       <Name>Render</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Simulation\Simulation.csproj">
+      <Project>{3831266c-24fe-4dd6-a4cc-39d0ef33c299}</Project>
+      <Name>Simulation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TmxUtilities\TmxMapSerializer\TmxMapSerializer\TmxMapSerializer.csproj">
       <Project>{7A4D6FA1-E44B-40E2-9DE8-3606DBC657D9}</Project>
       <Name>TmxMapSerializer</Name>
@@ -176,10 +176,6 @@
     <ProjectReference Include="..\Utils\Utils.csproj">
       <Project>{772b1188-a00d-45fc-b352-834227adae96}</Project>
       <Name>Utils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\World\Simulation.csproj">
-      <Project>{3831266c-24fe-4dd6-a4cc-39d0ef33c299}</Project>
-      <Name>Simulation</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

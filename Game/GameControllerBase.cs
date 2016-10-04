@@ -6,8 +6,8 @@ using Render.Renderer;
 using RenderingBase.RenderRequests;
 using TmxMapSerializer.Elements;
 using TmxMapSerializer.Serializer;
-using World.GameActors.GameObjects;
-using World.ToyWorldCore;
+using Simulation.GameActors.GameObjects;
+using Simulation.ToyWorldCore;
 
 namespace Game
 {

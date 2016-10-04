@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using VRageMath;
-using World.Physics;
+using Simulation.Physics;
 using Xunit;
 
 namespace ToyWorldTests.Physics

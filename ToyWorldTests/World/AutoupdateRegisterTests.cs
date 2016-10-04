@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using TmxMapSerializer.Elements;
 using TmxMapSerializer.Serializer;
-using World.Atlas;
-using World.GameActors;
-using World.GameActors.Tiles;
-using World.ToyWorldCore;
+using Simulation.Atlas;
+using Simulation.GameActors;
+using Simulation.GameActors.Tiles;
+using Simulation.ToyWorldCore;
 using Xunit;
 
 namespace ToyWorldTests.World

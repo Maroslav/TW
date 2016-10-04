@@ -5,7 +5,7 @@ using Render.RenderRequests;
 using RenderingBase.Renderer;
 using RenderingBase.RenderObjects.Geometries;
 using RenderingBase.RenderRequests;
-using World.ToyWorldCore;
+using Simulation.ToyWorldCore;
 
 namespace Render.Renderer
 {

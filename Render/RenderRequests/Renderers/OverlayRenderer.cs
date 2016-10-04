@@ -9,8 +9,8 @@ using RenderingBase.RenderObjects.Geometries;
 using RenderingBase.RenderObjects.Textures;
 using TmxMapSerializer.Elements;
 using VRageMath;
-using World.GameActors.GameObjects;
-using World.ToyWorldCore;
+using Simulation.GameActors.GameObjects;
+using Simulation.ToyWorldCore;
 
 namespace Render.RenderRequests
 {

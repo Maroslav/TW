@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TmxMapSerializer.Elements;
-using World.GameActors.Tiles;
+using Simulation.GameActors.Tiles;
 using Xunit;
 
 namespace ToyWorldTests.World

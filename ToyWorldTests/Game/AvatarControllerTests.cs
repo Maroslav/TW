@@ -1,7 +1,7 @@
 ﻿using Game;
 using GoodAI.ToyWorld.Control;
 using VRageMath;
-using World.GameActors.GameObjects;
+using Simulation.GameActors.GameObjects;
 using Xunit;
 
 namespace ToyWorldTests.Game

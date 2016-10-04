@@ -2,7 +2,7 @@
 using GoodAI.ToyWorld.Control;
 using GoodAI.ToyWorldAPI;
 using VRageMath;
-using World.GameActors.GameObjects;
+using Simulation.GameActors.GameObjects;
 
 namespace Game
 {

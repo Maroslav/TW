@@ -17,7 +17,7 @@ namespace ToyWorldTests.Physics
         public void TestDecomposeSpeed(float direction, float speed)
         {
             float directionRads = MathHelper.ToRadians(direction);
-            Vector2 decomposeSpeed = global::World.Physics.Utils.DecomposeSpeed(speed, directionRads);
+            Vector2 decomposeSpeed = global::Simulation.Physics.Utils.DecomposeSpeed(speed, directionRads);
 
             switch ((int) direction)
             {
@@ -49,7 +49,7 @@ namespace ToyWorldTests.Physics
         {
             float referenceDirection = MathHelper.ToRadians(45);
             float directionRads = MathHelper.ToRadians(direction);
-            Vector2 decomposeSpeed = global::World.Physics.Utils.DecomposeSpeed(speed, directionRads, referenceDirection);
+            Vector2 decomposeSpeed = global::Simulation.Physics.Utils.DecomposeSpeed(speed, directionRads, referenceDirection);
 
             Assert.Equal(decomposeSpeed.X, expectedX, 2);
             Assert.Equal(decomposeSpeed.Y, expectedY, 2);
@@ -63,8 +63,8 @@ namespace ToyWorldTests.Physics
         public void TestComposeSpeed(float direction, float speed)
         {
             float directionRads = MathHelper.ToRadians(direction);
-            Vector2 decomposeSpeed = global::World.Physics.Utils.DecomposeSpeed(speed, directionRads);
-            Tuple<float, float> composeSpeed = global::World.Physics.Utils.ComposeSpeed(decomposeSpeed);
+            Vector2 decomposeSpeed = global::Simulation.Physics.Utils.DecomposeSpeed(speed, directionRads);
+            Tuple<float, float> composeSpeed = global::Simulation.Physics.Utils.ComposeSpeed(decomposeSpeed);
             Assert.Equal(composeSpeed.Item1, speed, 3);
             Assert.Equal(composeSpeed.Item2, directionRads, 3);
         }
@@ -78,8 +78,8 @@ namespace ToyWorldTests.Physics
         {
             float referenceDirection = MathHelper.ToRadians(45);
             float directionRads = MathHelper.ToRadians(direction);
-            Vector2 decomposeSpeed = global::World.Physics.Utils.DecomposeSpeed(speed, directionRads, referenceDirection);
-            Tuple<float, float> composeSpeed = global::World.Physics.Utils.ComposeSpeed(decomposeSpeed,
+            Vector2 decomposeSpeed = global::Simulation.Physics.Utils.DecomposeSpeed(speed, directionRads, referenceDirection);
+            Tuple<float, float> composeSpeed = global::Simulation.Physics.Utils.ComposeSpeed(decomposeSpeed,
                 referenceDirection);
             Assert.Equal(composeSpeed.Item1, speed, 3);
             Assert.Equal(composeSpeed.Item2, directionRads, 3);
@@ -94,8 +94,8 @@ namespace ToyWorldTests.Physics
         {
             float referenceDirection = MathHelper.ToRadians(-45);
             float directionRads = MathHelper.ToRadians(direction);
-            Vector2 decomposeSpeed = global::World.Physics.Utils.DecomposeSpeed(speed, directionRads, referenceDirection);
-            Tuple<float, float> composeSpeed = global::World.Physics.Utils.ComposeSpeed(decomposeSpeed,
+            Vector2 decomposeSpeed = global::Simulation.Physics.Utils.DecomposeSpeed(speed, directionRads, referenceDirection);
+            Tuple<float, float> composeSpeed = global::Simulation.Physics.Utils.ComposeSpeed(decomposeSpeed,
                 referenceDirection);
             Assert.Equal(composeSpeed.Item1, speed, 3);
             Assert.Equal(composeSpeed.Item2, directionRads, 3);

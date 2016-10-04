@@ -96,6 +96,10 @@
       <Project>{272a6b2f-921a-4ac2-aced-a3e0f487954c}</Project>
       <Name>RenderingBase</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Simulation\Simulation.csproj">
+      <Project>{3831266c-24fe-4dd6-a4cc-39d0ef33c299}</Project>
+      <Name>Simulation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TmxUtilities\TmxMapSerializer\TmxMapSerializer\TmxMapSerializer.csproj">
       <Project>{7a4d6fa1-e44b-40e2-9de8-3606dbc657d9}</Project>
       <Name>TmxMapSerializer</Name>
@@ -107,10 +111,6 @@
     <ProjectReference Include="..\Utils\Utils.csproj">
       <Project>{772b1188-a00d-45fc-b352-834227adae96}</Project>
       <Name>Utils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\World\Simulation.csproj">
-      <Project>{3831266c-24fe-4dd6-a4cc-39d0ef33c299}</Project>
-      <Name>Simulation</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

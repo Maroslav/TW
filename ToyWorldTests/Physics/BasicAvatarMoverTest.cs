@@ -1,6 +1,6 @@
 ﻿using VRageMath;
-using World.GameActors.GameObjects;
-using World.Physics;
+using Simulation.GameActors.GameObjects;
+using Simulation.Physics;
 using Xunit;
 
 namespace ToyWorldTests.Physics

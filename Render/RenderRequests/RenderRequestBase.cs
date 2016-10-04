@@ -6,10 +6,10 @@ using RenderingBase.RenderObjects.Buffers;
 using RenderingBase.RenderObjects.Geometries;
 using RenderingBase.RenderRequests;
 using VRageMath;
-using World.ToyWorldCore;
+using Simulation.ToyWorldCore;
 using Rectangle = VRageMath.Rectangle;
 using RectangleF = VRageMath.RectangleF;
-using TupleType = System.Tuple<World.Atlas.Layers.ITileLayer, int[], VRageMath.Vector4I[]>;
+using TupleType = System.Tuple<Simulation.Atlas.Layers.ITileLayer, int[], VRageMath.Vector4I[]>;
 
 namespace Render.RenderRequests
 {

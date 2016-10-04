@@ -3,12 +3,12 @@ using Moq;
 using TmxMapSerializer.Elements;
 using TmxMapSerializer.Serializer;
 using VRageMath;
-using World.Atlas.Layers;
-using World.GameActors;
-using World.GameActors.GameObjects;
-using World.GameActors.Tiles;
-using World.GameActors.Tiles.ObstacleInteractable;
-using World.ToyWorldCore;
+using Simulation.Atlas.Layers;
+using Simulation.GameActors;
+using Simulation.GameActors.GameObjects;
+using Simulation.GameActors.Tiles;
+using Simulation.GameActors.Tiles.ObstacleInteractable;
+using Simulation.ToyWorldCore;
 using Xunit;
 
 namespace ToyWorldTests.World

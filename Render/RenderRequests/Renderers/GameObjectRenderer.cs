@@ -11,10 +11,10 @@ using RenderingBase.RenderObjects.Geometries;
 using RenderingBase.RenderObjects.Textures;
 using TmxMapSerializer.Elements;
 using VRageMath;
-using World.Atlas.Layers;
-using World.GameActors.GameObjects;
-using World.Physics;
-using World.ToyWorldCore;
+using Simulation.Atlas.Layers;
+using Simulation.GameActors.GameObjects;
+using Simulation.Physics;
+using Simulation.ToyWorldCore;
 
 namespace Render.RenderRequests
 {

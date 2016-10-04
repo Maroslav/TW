@@ -1,13 +1,13 @@
 ﻿using Moq;
 using VRageMath;
-using World.Atlas;
-using World.Atlas.Layers;
-using World.GameActions;
-using World.GameActors;
-using World.GameActors.GameObjects;
-using World.GameActors.Tiles;
+using Simulation.Atlas;
+using Simulation.Atlas.Layers;
+using Simulation.GameActions;
+using Simulation.GameActors;
+using Simulation.GameActors.GameObjects;
+using Simulation.GameActors.Tiles;
 using Xunit;
-using World.ToyWorldCore;
+using Simulation.ToyWorldCore;
 
 namespace ToyWorldTests.World
 {

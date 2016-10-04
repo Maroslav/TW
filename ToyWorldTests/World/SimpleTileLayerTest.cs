@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using Moq;
 using System.Linq;
-using World.GameActors.Tiles;
-using World.ToyWorldCore;
+using Simulation.GameActors.Tiles;
+using Simulation.ToyWorldCore;
 using Xunit;
 using VRageMath;
-using World.Atlas.Layers;
+using Simulation.Atlas.Layers;
 
 namespace ToyWorldTests.World
 {

@@ -1,11 +1,11 @@
 ﻿using Moq;
 using VRageMath;
-using World.Atlas;
-using World.GameActions;
-using World.GameActors;
-using World.GameActors.Tiles;
-using World.GameActors.Tiles.ObstacleInteractable;
-using World.ToyWorldCore;
+using Simulation.Atlas;
+using Simulation.GameActions;
+using Simulation.GameActors;
+using Simulation.GameActors.Tiles;
+using Simulation.GameActors.Tiles.ObstacleInteractable;
+using Simulation.ToyWorldCore;
 using Xunit;
 
 namespace ToyWorldTests.World

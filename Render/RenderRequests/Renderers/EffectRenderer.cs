@@ -4,7 +4,7 @@ using OpenTK.Graphics.OpenGL;
 using Render.RenderObjects.Effects;
 using RenderingBase.Renderer;
 using VRageMath;
-using World.ToyWorldCore;
+using Simulation.ToyWorldCore;
 
 namespace Render.RenderRequests
 {

@@ -1,14 +1,14 @@
 ﻿using System;
 using System.IO;
-using World.GameActions;
-using World.GameActors.Tiles;
+using Simulation.GameActions;
+using Simulation.GameActors.Tiles;
 using Xunit;
 using Moq;
 using VRageMath;
-using World.Atlas;
-using World.ToyWorldCore;
-using World.GameActors;
-using World.GameActors.Tiles.Obstacle;
+using Simulation.Atlas;
+using Simulation.ToyWorldCore;
+using Simulation.GameActors;
+using Simulation.GameActors.Tiles.Obstacle;
 
 namespace ToyWorldTests.World
 {
