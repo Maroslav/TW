@@ -5,14 +5,14 @@ using Render.RenderRequests;
 using RenderingBase.Renderer;
 using RenderingBase.RenderObjects.Geometries;
 using RenderingBase.RenderRequests;
-using World.ToyWorldCore;
 
 namespace Render.Renderer
 {
-    public class ToyWorldRenderer
-        : GLRenderer<ToyWorld>
+    public class BasicGLRenderer<TWorld>
+        : GLRenderer<TWorld>
+        where TWorld : class
     {
-        static ToyWorldRenderer()
+        static BasicGLRenderer()
         {
             //////////////////////
             // NOTE: All renderRequests must inherit from RenderRequest
@@ -27,7 +27,7 @@ namespace Render.Renderer
             RenderRequestFactory.CaseParamInternal<IToolAvatarRR, ToolAvatarRR>();
         }
 
-        public ToyWorldRenderer()
+        public BasicGLRenderer()
         {
             // TODO: gather and distribute types to TypeSwitches based on available constructor through reflection (add attributes?)
 

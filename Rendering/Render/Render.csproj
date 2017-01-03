@@ -54,7 +54,7 @@
     <Compile Include="RenderObjects\Effects\PointLightEffect.cs" />
     <Compile Include="RenderObjects\Effects\SmokeEffect.cs" />
     <Compile Include="RenderObjects\Geometries\QuadTex.cs" />
-    <Compile Include="Renderer\ToyWorldRenderer.cs" />
+    <Compile Include="Renderer\BasicGLRenderer.cs" />
     <Compile Include="RenderRequests\AvatarRenderRequests\ToolAvatarRR.cs" />
     <Compile Include="RenderRequests\AvatarRenderRequests\FovAvatarRR.cs" />
     <Compile Include="RenderRequests\Renderers\GameObjectPainter.cs" />
