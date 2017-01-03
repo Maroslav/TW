@@ -27,7 +27,8 @@ namespace ToyWorldTests.World
 
             TmxSerializer serializer = new TmxSerializer();
             Map map = serializer.Deserialize(tmxStream);
-            ToyWorld world = new ToyWorld(map, tilesetTableStreamReader);
+            ToyWorld world = new ToyWorld();
+            world.Init(map, tilesetTableStreamReader);
 
             m_atlas = world.Atlas;
         }
@@ -41,7 +42,7 @@ namespace ToyWorldTests.World
         [Fact]
         public void TestActorsAt()
         {
-            List<GameActorPosition> results = m_atlas.ActorsAt(new Vector2(2,2)).ToList();
+            List<GameActorPosition> results = m_atlas.ActorsAt(new Vector2(2, 2)).ToList();
 
             Assert.IsType<Background>(results[0].Actor);
             Assert.IsType<Avatar>(results[1].Actor);
@@ -50,7 +51,7 @@ namespace ToyWorldTests.World
         [Fact]
         public void TestInteractableActorsAt()
         {
-            List<GameActorPosition> results = m_atlas.ActorsAt(new Vector2(2,0), LayerType.Interactables).ToList();
+            List<GameActorPosition> results = m_atlas.ActorsAt(new Vector2(2, 0), LayerType.Interactables).ToList();
 
             Assert.IsType<Apple>(results[0].Actor);
         }
@@ -75,7 +76,7 @@ namespace ToyWorldTests.World
         [InlineData(2, 0.4)]
         public void TestDayCycle(int seconds, float result)
         {
-            m_atlas.DayLength = new TimeSpan(0,0,0,10);
+            m_atlas.DayLength = new TimeSpan(0, 0, 0, 10);
 
             m_atlas.IncrementTime(seconds: seconds);
 

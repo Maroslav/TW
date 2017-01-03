@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.Diagnostics.Contracts;
 using System.IO;
 using System.Linq;
-using GoodAI.Logging;
 using TmxMapSerializer.Elements;
 using VRageMath;
 using World.Atlas;
@@ -34,7 +33,10 @@ namespace World.ToyWorldCore
         /// </summary>
         public Dictionary<string, Func<IAtlas, float>> SignalDispatchers { get; protected set; }
 
-        public ToyWorld(Map tmxDeserializedMap, StreamReader tileTable)
+        public ToyWorld()
+        { }
+
+        public void Init(Map tmxDeserializedMap, StreamReader tileTable)
         {
             if (tileTable == null)
                 throw new ArgumentNullException("tileTable");
@@ -189,9 +191,9 @@ namespace World.ToyWorldCore
         #endregion
 
 
-        public List<int> GetAvatarsIds()
+        public IEnumerable<int> GetAvatarIds()
         {
-            return Atlas.Avatars.Keys.ToList();
+            return Atlas.Avatars.Keys;
         }
 
         public List<string> GetAvatarsNames()

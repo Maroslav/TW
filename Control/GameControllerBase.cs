@@ -7,26 +7,28 @@ using RenderingBase.RenderRequests;
 using TmxMapSerializer.Elements;
 using TmxMapSerializer.Serializer;
 using World.GameActors.GameObjects;
-using World.ToyWorldCore;
+using World.WorldInterfaces;
 
 namespace Game
 {
-    public abstract class GameControllerBase : IGameController
+    public abstract class GameControllerBase<TWorld>
+        : IGameController
+        where TWorld : class, IWorld, new()
     {
         private bool m_initialized;
         private readonly GameSetup m_gameSetup;
 
-        private ToyWorldRenderer m_renderer;
-        public ToyWorldRenderer Renderer { get { return m_renderer; } private set { m_renderer = value; } }
+        private BasicGLRenderer<TWorld> m_renderer;
+        public BasicGLRenderer<TWorld> Renderer { get { return m_renderer; } private set { m_renderer = value; } }
 
-        public ToyWorld World { get; private set; }
+        public TWorld World { get; private set; }
 
         private Dictionary<int, IAvatar> m_avatars;
         private Dictionary<int, AvatarController> m_avatarControllers;
 
         public event MessageEventHandler NewMessage = delegate { };
 
-        protected GameControllerBase(ToyWorldRenderer renderer, GameSetup setup)
+        protected GameControllerBase(BasicGLRenderer<TWorld> renderer, GameSetup setup)
         {
             Renderer = renderer;
             m_gameSetup = setup;
@@ -50,10 +52,11 @@ namespace Game
             Map map = serializer.Deserialize(m_gameSetup.SaveFile);
             m_gameSetup.SaveFile.Close();
 
-            World = new ToyWorld(map, m_gameSetup.TilesetFile);
+            World = new TWorld();
+            World.Init(map, m_gameSetup.TilesetFile);
 
             m_avatars = new Dictionary<int, IAvatar>();
-            foreach (int avatarId in World.GetAvatarsIds())
+            foreach (int avatarId in World.GetAvatarIds())
             {
                 m_avatars.Add(avatarId, World.GetAvatar(avatarId));
             }
@@ -120,12 +123,11 @@ namespace Game
         void InitRR<T>(T rr)
             where T : class
         {
-            IRenderRequestBaseInternal<ToyWorld> rrBase = rr as IRenderRequestBaseInternal<ToyWorld>; // Assume that all renderRequests created by factory inherit from IRenderRequestBaseInternal
+            IRenderRequestBaseInternal<TWorld> rrBase = rr as IRenderRequestBaseInternal<TWorld>; // Assume that all renderRequests created by factory inherit from IRenderRequestBaseInternal
 
             if (rrBase == null)
                 throw new RenderRequestNotImplementedException(
-                    string.Format("Incorrect type argument; the type {0} is not registered for use in this controller version.",
-                    typeof(T).Name));
+                    "The supplied interface cannot be used. There is either no implementation or it is implemented incorrectly.");
 
             rrBase.Renderer = Renderer;
             rrBase.World = World;

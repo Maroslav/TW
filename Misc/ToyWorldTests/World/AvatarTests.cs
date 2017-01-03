@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Linq;
 using Moq;
 using TmxMapSerializer.Elements;
 using TmxMapSerializer.Serializer;
@@ -63,9 +64,10 @@ namespace ToyWorldTests.World
 
             TmxSerializer serializer = new TmxSerializer();
             Map map = serializer.Deserialize(tmxStream);
-            m_worldPickupWorld = new ToyWorld(map, tilesetTableStreamReader);
+            m_worldPickupWorld = new ToyWorld();
+            m_worldPickupWorld.Init(map, tilesetTableStreamReader);
 
-            m_avatarPickuper = m_worldPickupWorld.GetAvatar(m_worldPickupWorld.GetAvatarsIds()[0]);
+            m_avatarPickuper = m_worldPickupWorld.GetAvatar(m_worldPickupWorld.GetAvatarIds().First());
             m_avatarPickuper.PickUp = true;
 
             Assert.Equal(null, m_avatarPickuper.Tool);
@@ -103,9 +105,10 @@ namespace ToyWorldTests.World
 
             TmxSerializer serializer = new TmxSerializer();
             Map map = serializer.Deserialize(tmxStream);
-            m_worldPickupWorld = new ToyWorld(map, tilesetTableStreamReader);
+            m_worldPickupWorld = new ToyWorld();
+            m_worldPickupWorld.Init(map, tilesetTableStreamReader);
 
-            m_eater = m_worldPickupWorld.GetAvatar(m_worldPickupWorld.GetAvatarsIds()[0]);
+            m_eater = m_worldPickupWorld.GetAvatar(m_worldPickupWorld.GetAvatarIds().First());
 
             // Act
             for (int i = 0; i < 100; i++)

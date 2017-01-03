@@ -4,6 +4,7 @@ using System.IO;
 using Game;
 using GoodAI.ToyWorld.Control;
 using ToyWorldTests.Render.RRs;
+using World.ToyWorldCore;
 using Xunit;
 
 namespace ToyWorldTests.Game
@@ -13,7 +14,7 @@ namespace ToyWorldTests.Game
     {
         private bool m_disposed;
 
-        protected GameControllerBase GameController;
+        protected GameControllerBase<ToyWorld> GameController;
 
 
         public GameControllerTestBase()
@@ -25,7 +26,7 @@ namespace ToyWorldTests.Game
 
             var gameSetup = new GameSetup(tmxMemoryStream, tilesetTableStreamReader);
 
-            GameController = GetController(gameSetup);
+            GameController = GetController(gameSetup) as GameControllerBase<ToyWorld>;
 
             GameController.Init();
         }
@@ -48,7 +49,7 @@ namespace ToyWorldTests.Game
             m_disposed = true;
         }
 
-        protected virtual GameControllerBase GetController(GameSetup gameSetup)
+        protected virtual IGameController GetController(GameSetup gameSetup)
         {
             return ControllerFactory.GetController(gameSetup);
         }
@@ -92,7 +93,7 @@ namespace ToyWorldTests.Game
 
     public class ThreadSafeGameControllerTests : GameControllerTestBase
     {
-        protected override GameControllerBase GetController(GameSetup gameSetup)
+        protected override IGameController GetController(GameSetup gameSetup)
         {
             return ControllerFactory.GetThreadSafeController(gameSetup);
         }

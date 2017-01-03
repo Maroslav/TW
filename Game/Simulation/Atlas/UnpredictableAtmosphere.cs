@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Troschuetz.Random.Distributions.Continuous;
 using VRageMath;
 using World.GameActors.Tiles;
 
@@ -23,7 +22,7 @@ namespace World.Atlas
 
         private float m_dailyTemperature = 1f;
 
-        private readonly NormalDistribution m_random = new NormalDistribution(42, 0, 1);
+        private readonly Random m_random = new Random();
 
         private readonly List<IHeatSource> m_heatSources;
 
@@ -101,7 +100,7 @@ namespace World.Atlas
 
             bool getCold = actualTime.Hour >= 18;
             float newTemperature = m_oldTemperature + m_newDiff;
-            float newDiff = Math.Abs(newTemperature - m_dailyTemperature)*(float) (m_random.NextDouble()) / 10 + 0.2f;
+            float newDiff = Math.Abs(newTemperature - m_dailyTemperature)*(float) (m_random.NextDouble() - 0.5f) / 10 + 0.2f;
             if (getCold)
             {
                 m_newDiff = - newDiff;

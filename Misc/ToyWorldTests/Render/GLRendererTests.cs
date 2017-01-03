@@ -18,7 +18,7 @@ namespace ToyWorldTests.Render
     [Collection("Renderer")]
     public class GLRendererTestBase : IDisposable
     {
-        private readonly GameControllerBase m_gameController;
+        private readonly GameControllerBase<ToyWorld> m_gameController;
 
         protected ToyWorld World { get { return m_gameController.World; } }
         protected GLRenderer<ToyWorld> Renderer { get { return m_gameController.Renderer; } }
@@ -30,7 +30,7 @@ namespace ToyWorldTests.Render
             using (var tilesetTableStreamReader = new StreamReader(FileStreams.TilesetTableStream()))
             {
                 var gameSetup = new GameSetup(tmxStream, tilesetTableStreamReader);
-                m_gameController = ControllerFactory.GetController(gameSetup);
+                m_gameController = ControllerFactory.GetController(gameSetup) as GameControllerBase<ToyWorld>;
                 m_gameController.Init();
             }
         }

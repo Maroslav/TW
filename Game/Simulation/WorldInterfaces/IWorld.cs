@@ -1,10 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using TmxMapSerializer.Elements;
+using World.Atlas;
 using World.GameActors.GameObjects;
 
 namespace World.WorldInterfaces
 {
     public interface IWorld
     {
+        Dictionary<string, Func<IAtlas, float>> SignalDispatchers { get; }
+        IAtlas Atlas { get; }
+
+        void Init(Map map, StreamReader tileset);
         /// <summary>
         /// Updates every object implementing IAutoupdatable interface and all their's GameActions
         /// Order of update is: 
@@ -16,10 +24,7 @@ namespace World.WorldInterfaces
         /// </summary>
         void Update();
 
-        List<int> GetAvatarsIds();
-
-        List<string> GetAvatarsNames();
-
+        IEnumerable<int> GetAvatarIds();
         IAvatar GetAvatar(int id);
     }
 }

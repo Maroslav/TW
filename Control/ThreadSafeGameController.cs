@@ -5,18 +5,19 @@ using System.Threading.Tasks;
 using GoodAI.ToyWorld.Control;
 using Render.Renderer;
 using VRage.Library.Collections;
+using World.ToyWorldCore;
 using TupleType = System.Tuple<System.Func<object>, System.Threading.Tasks.TaskCompletionSource<object>>;
 
 namespace Game
 {
-    public class ThreadSafeGameController : GameControllerBase
+    public class ThreadSafeGameController : GameControllerBase<ToyWorld>
     {
         private readonly AsyncBuffer<TupleType> m_buffer = new AsyncBuffer<TupleType>();
         private readonly CancellationTokenSource m_cancellationToken = new CancellationTokenSource();
         private Task m_requestCollectionTask;
 
 
-        public ThreadSafeGameController(ToyWorldRenderer renderer, GameSetup gameSetup)
+        public ThreadSafeGameController(BasicGLRenderer<ToyWorld> renderer, GameSetup gameSetup)
             : base(renderer, gameSetup)
         {
             m_requestCollectionTask = Task.Factory.StartNew(RunRequestCollectionAsync, TaskCreationOptions.LongRunning);

@@ -22,13 +22,18 @@ namespace ToyWorldTests.World
 
             TmxSerializer serializer = new TmxSerializer();
             Map map = serializer.Deserialize(tmxStream);
-            m_world = new ToyWorld(map, tilesetTableStreamReader);
+            m_world = new ToyWorld();
+            m_world.Init(map, tilesetTableStreamReader);
         }
 
         [Fact]
         public void WorldWithNullMapThrows()
         {
-            Assert.Throws<ArgumentNullException>(() => new ToyWorld(null, new StreamReader(FileStreams.TilesetTableStream())));
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                var tw = new ToyWorld();
+                tw.Init(null, new StreamReader(FileStreams.TilesetTableStream()));
+            });
         }
 
         [Fact]
@@ -39,7 +44,11 @@ namespace ToyWorldTests.World
             TmxSerializer serializer = new TmxSerializer();
             Map map = serializer.Deserialize(tmxStream);
 
-            Assert.Throws<ArgumentNullException>(() => new ToyWorld(map, null));
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                var tw = new ToyWorld();
+                tw.Init(map, null);
+            });
         }
 
         [Fact]
@@ -50,7 +59,8 @@ namespace ToyWorldTests.World
 
             TmxSerializer serializer = new TmxSerializer();
             Map map = serializer.Deserialize(tmxStream);
-            TestingToyWorld toyWorld = new TestingToyWorld(map, tilesetTableStreamReader);
+            TestingToyWorld toyWorld = new TestingToyWorld();
+            toyWorld.Init(map, tilesetTableStreamReader);
             toyWorld.SetRegister(new AutoupdateRegister());
 
             Mock<IAutoupdateableGameActor> mock1 = new Mock<IAutoupdateableGameActor>();
@@ -80,7 +90,7 @@ namespace ToyWorldTests.World
 
         private class TestingToyWorld : ToyWorld
         {
-            public TestingToyWorld(Map tmxDeserializedMap, StreamReader tileTable) : base(tmxDeserializedMap, tileTable) { }
+            public TestingToyWorld() { }
 
             public void SetRegister(AutoupdateRegister register)
             {
