@@ -29,10 +29,7 @@ namespace Utils.VRageRIP.Lib.Collections
             TValBase res;
 
             if (!Matches.TryGetValue(typeof(TKey), out res))
-            {
-                Debug.Fail(string.Format("Type {0} not present in switch {1}", typeof(TKey), GetType().Name));
-                return null;
-            }
+                throw new KeyNotFoundException(string.Format("Type {0} not present in switch {1}", typeof(TKey), GetType().Name));
 
             return res;
         }

@@ -42,7 +42,16 @@ namespace RenderingBase.RenderRequests
             if (typeof(T) == typeof(IRenderRequest))
                 throw new RenderRequestNotImplementedException("The supplied interface cannot be the base interface. You have to use a derived type. Used type: " + typeof(IRenderRequest).Name);
 
-            return RRSwitch.Switch<T>();
+            try
+            {
+                return RRSwitch.Switch<T>();
+            }
+            catch (KeyNotFoundException e)
+            {
+                throw new RenderRequestNotImplementedException(
+                    string.Format("Incorrect type argument; the type {0} is not registered for use in this controller version.",
+                    typeof(T).Name));
+            }
         }
 
         public static T CreateRenderRequest<T>(int avatarID)
@@ -51,7 +60,16 @@ namespace RenderingBase.RenderRequests
             if (typeof(T) == typeof(IAvatarRenderRequest))
                 throw new RenderRequestNotImplementedException("The supplied interface cannot be the base interface. You have to use a derived type. Used type: " + typeof(IAvatarRenderRequest).Name);
 
-            return avatarRRSwitch.Switch<T>(avatarID);
+            try
+            {
+                return avatarRRSwitch.Switch<T>(avatarID);
+            }
+            catch (KeyNotFoundException e)
+            {
+                throw new RenderRequestNotImplementedException(
+                    string.Format("Incorrect type argument; the type {0} is not registered for use in this controller version.",
+                    typeof(T).Name));
+            }
         }
     }
 }
