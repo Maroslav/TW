@@ -33,10 +33,6 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="OpenTK, Version=2.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\OpenTK.2.0.0\lib\net20\OpenTK.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -48,28 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Renderer\GLRenderer.cs" />
-    <Compile Include="Renderer\RendererBase.cs" />
-    <Compile Include="RenderObjects\Effects\Base\EffectBase.cs" />
-    <Compile Include="RenderObjects\Effects\Base\EffectManager.cs" />
-    <Compile Include="RenderObjects\Geometries\Base\GeometryBase.cs" />
-    <Compile Include="RenderObjects\Geometries\Base\GeometryManager.cs" />
-    <Compile Include="RenderObjects\Geometries\DuplicatedCube.cs" />
-    <Compile Include="RenderObjects\Geometries\DuplicatedCubeGrid.cs" />
-    <Compile Include="RenderObjects\Geometries\CubeGrid.cs" />
-    <Compile Include="RenderObjects\Geometries\DuplicatedGrid.cs" />
-    <Compile Include="RenderObjects\Geometries\Cube.cs" />
-    <Compile Include="RenderObjects\Geometries\Quad.cs" />
-    <Compile Include="RenderObjects\Textures\Base\TextureBase.cs" />
-    <Compile Include="RenderObjects\Textures\Base\TextureManager.cs" />
-    <Compile Include="RenderObjects\Textures\BasicTextures.cs" />
-    <Compile Include="RenderObjects\Textures\RenderTargetTextures.cs" />
-    <Compile Include="RenderObjects\Textures\RenderTargetTexturesMultisample.cs" />
-    <Compile Include="RenderObjects\Textures\TilesetImage.cs" />
-    <Compile Include="RenderObjects\Textures\TilesetTexture.cs" />
-    <Compile Include="RenderRequests\Base\RenderRequestAttribute.cs" />
-    <Compile Include="RenderRequests\Base\RenderRequestFactory.cs" />
-    <Compile Include="RenderRequests\Base\IRenderRequestBaseInternal.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\API\ToyWorldAPI\ToyWorldAPI.csproj">
@@ -84,10 +58,6 @@
       <Project>{772b1188-a00d-45fc-b352-834227adae96}</Project>
       <Name>Utils</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="OpenTK.dll.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
