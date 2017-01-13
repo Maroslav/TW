@@ -4,6 +4,7 @@ using GoodAI.ToyWorld.Control;
 using GoodAI.ToyWorldAPI;
 using Render.Renderer;
 using RenderingBase.RenderRequests;
+using Strut_Render_Base;
 using TmxMapSerializer.Elements;
 using TmxMapSerializer.Serializer;
 using World.GameActors.GameObjects;
@@ -20,6 +21,8 @@ namespace Game
 
         private BasicGLRenderer<TWorld> m_renderer;
         public BasicGLRenderer<TWorld> Renderer { get { return m_renderer; } private set { m_renderer = value; } }
+
+        private Renderer m_testRenderer;
 
         public TWorld World { get; private set; }
 
@@ -38,6 +41,8 @@ namespace Game
         {
             if (m_renderer != null)
                 m_renderer.Dispose();
+
+            m_testRenderer?.Dispose();
         }
 
 
@@ -48,30 +53,34 @@ namespace Game
             m_initialized = true;
 
             // Init World
-            var serializer = new TmxSerializer();
-            Map map = serializer.Deserialize(m_gameSetup.SaveFile);
-            m_gameSetup.SaveFile.Close();
+            //var serializer = new TmxSerializer();
+            //Map map = serializer.Deserialize(m_gameSetup.SaveFile);
+            //m_gameSetup.SaveFile.Close();
 
-            World = new TWorld();
-            World.Init(map, m_gameSetup.TilesetFile);
+            //World = new TWorld();
+            //World.Init(map, m_gameSetup.TilesetFile);
 
-            m_avatars = new Dictionary<int, IAvatar>();
-            foreach (int avatarId in World.GetAvatarIds())
-            {
-                m_avatars.Add(avatarId, World.GetAvatar(avatarId));
-            }
+            //m_avatars = new Dictionary<int, IAvatar>();
+            //foreach (int avatarId in World.GetAvatarIds())
+            //{
+            //    m_avatars.Add(avatarId, World.GetAvatar(avatarId));
+            //}
 
-            m_avatarControllers = new Dictionary<int, AvatarController>();
-            foreach (KeyValuePair<int, IAvatar> avatar in m_avatars)
-            {
-                var avatarController = new AvatarController(avatar.Value);
-                m_avatarControllers.Add(avatar.Key, avatarController);
-            }
+            //m_avatarControllers = new Dictionary<int, AvatarController>();
+            //foreach (KeyValuePair<int, IAvatar> avatar in m_avatars)
+            //{
+            //    var avatarController = new AvatarController(avatar.Value);
+            //    m_avatarControllers.Add(avatar.Key, avatarController);
+            //}
 
             // Init rendering
             Renderer.Init();
             Renderer.CreateWindow("TestGameWindow", 1024, 1024);
             Renderer.CreateContext();
+
+            m_testRenderer = new Strut_Render_Vk.Renderer();
+            m_testRenderer.WinHandle = Renderer.Window.WindowInfo.Handle;
+            m_testRenderer.Init();
         }
 
         public virtual void MakeStep()
@@ -83,9 +92,10 @@ namespace Game
 
             // Controls should be already set
 
-            World.Update();
+            //World.Update();
 
-            Renderer.ProcessRequests();
+            m_testRenderer.Draw();
+            //Renderer.ProcessRequests();
         }
 
         public virtual void FinishStep()

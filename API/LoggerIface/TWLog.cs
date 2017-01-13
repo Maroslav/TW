@@ -1,4 +1,4 @@
-﻿using GoodAI.Logging;
+﻿//using GoodAI.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,19 +11,19 @@ namespace Logger
         public static List<TWLogMessage> GetAllLogMessages()
         {
             var list = new List<TWLogMessage>();
-            ILogReader reader = LogReader.Instance;
+            //ILogReader reader = LogReader.Instance;
             
 
-            while(true)
-            {
-                LogMessage message = reader.GetNextLogMessage();
-                if (message == null)
-                {
-                    break;
-                }
-                list.Add(new TWLogMessage(ToTWSeverity(message.Severity), message.Template, 
-                    message.Objects, message.Exception, message.Time));
-            }
+            //while(true)
+            //{
+                //LogMessage message = reader.GetNextLogMessage();
+                //if (message == null)
+                //{
+                //    break;
+                //}
+                //list.Add(new TWLogMessage(ToTWSeverity(message.Severity), message.Template, 
+                //    message.Objects, message.Exception, message.Time));
+            //}
 
             return list;
         }
@@ -53,9 +53,9 @@ namespace Logger
             return GetWarnLogMessages().Where(x => x.Severity != TWSeverity.Warn).ToList();
         }
 
-        private static TWSeverity ToTWSeverity(Severity s)
-        {
-            return (TWSeverity) s;
-        }
+        //private static TWSeverity ToTWSeverity(Severity s)
+        //{
+        //    return (TWSeverity) s;
+        //}
     }
 }

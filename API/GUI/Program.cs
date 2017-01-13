@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GoodAI.ToyWorld.Control;
 
 namespace GUI
 {
@@ -10,6 +11,15 @@ namespace GUI
     {
         static void Main(string[] args)
         {
+            var controller = ToyWorldFactory.GameFactory.GetGameController(null);
+
+            controller.Init();
+
+            while (true)
+            {
+                controller.MakeStep();
+            }
+            
         }
     }
 }
