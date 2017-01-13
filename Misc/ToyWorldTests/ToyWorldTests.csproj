@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ToyWorldTests</RootNamespace>
     <AssemblyName>ToyWorldTests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -19,6 +19,7 @@
     <TestProjectType>UnitTest</TestProjectType>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -123,13 +124,13 @@
       <Project>{c61db58a-5374-48f3-9457-025a1693c8cc}</Project>
       <Name>Control</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Rendering\RenderingBase\RenderingBase.csproj">
+    <ProjectReference Include="..\..\Rendering\RenderingBase\Strut_Render_Base.csproj">
       <Project>{272a6b2f-921a-4ac2-aced-a3e0f487954c}</Project>
-      <Name>RenderingBase</Name>
+      <Name>Strut_Render_Base</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Rendering\Render\Render.csproj">
+    <ProjectReference Include="..\..\Rendering\Render\Render_Legacy.csproj">
       <Project>{c1527127-dd8c-4076-a0a7-39eb2ef23787}</Project>
-      <Name>Render</Name>
+      <Name>Render_Legacy</Name>
     </ProjectReference>
     <ProjectReference Include="..\TmxUtilities\TmxMapSerializer\TmxMapSerializer\TmxMapSerializer.csproj">
       <Project>{7A4D6FA1-E44B-40E2-9DE8-3606DBC657D9}</Project>

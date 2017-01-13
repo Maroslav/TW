@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Game</RootNamespace>
     <AssemblyName>Game</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -49,6 +50,10 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="OpenTK, Version=2.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\OpenTK.2.0.0\lib\net20\OpenTK.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -67,13 +72,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Rendering\RenderingBase\RenderingBase.csproj">
+    <ProjectReference Include="..\Rendering\RenderingBase\Strut_Render_Base.csproj">
       <Project>{272a6b2f-921a-4ac2-aced-a3e0f487954c}</Project>
-      <Name>RenderingBase</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Rendering\Render\Render.csproj">
-      <Project>{c1527127-dd8c-4076-a0a7-39eb2ef23787}</Project>
-      <Name>Render</Name>
+      <Name>Strut_Render_Base</Name>
     </ProjectReference>
     <ProjectReference Include="..\Misc\TmxUtilities\TmxMapSerializer\TmxMapSerializer\TmxMapSerializer.csproj">
       <Project>{7A4D6FA1-E44B-40E2-9DE8-3606DBC657D9}</Project>
@@ -91,9 +92,14 @@
       <Project>{3831266c-24fe-4dd6-a4cc-39d0ef33c299}</Project>
       <Name>Simulation</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="GameDiagram.cd" />
+    <ProjectReference Include="..\Rendering\Render\Render_Legacy.csproj">
+      <Project>{c1527127-dd8c-4076-a0a7-39eb2ef23787}</Project>
+      <Name>Render_Legacy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Strut-Render-Vk\Strut_Render_Vk.csproj">
+      <Project>{d2f507d1-2d52-446d-adef-9df441715f9d}</Project>
+      <Name>Strut_Render_Vk</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

@@ -47,6 +47,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RendererBase\GLRenderer.cs" />
+    <Compile Include="RendererBase\RendererBase.cs" />
+    <Compile Include="RenderObjectsBase\Effects\Base\EffectBase.cs" />
+    <Compile Include="RenderObjectsBase\Effects\Base\EffectManager.cs" />
+    <Compile Include="RenderObjectsBase\Geometries\Base\GeometryBase.cs" />
+    <Compile Include="RenderObjectsBase\Geometries\Base\GeometryManager.cs" />
+    <Compile Include="RenderObjectsBase\Geometries\Cube.cs" />
+    <Compile Include="RenderObjectsBase\Geometries\CubeGrid.cs" />
+    <Compile Include="RenderObjectsBase\Geometries\DuplicatedCube.cs" />
+    <Compile Include="RenderObjectsBase\Geometries\DuplicatedCubeGrid.cs" />
+    <Compile Include="RenderObjectsBase\Geometries\DuplicatedGrid.cs" />
+    <Compile Include="RenderObjectsBase\Geometries\Quad.cs" />
+    <Compile Include="RenderObjectsBase\Textures\Base\TextureBase.cs" />
+    <Compile Include="RenderObjectsBase\Textures\Base\TextureManager.cs" />
+    <Compile Include="RenderObjectsBase\Textures\BasicTextures.cs" />
+    <Compile Include="RenderObjectsBase\Textures\RenderTargetTextures.cs" />
+    <Compile Include="RenderObjectsBase\Textures\RenderTargetTexturesMultisample.cs" />
+    <Compile Include="RenderObjectsBase\Textures\TilesetImage.cs" />
+    <Compile Include="RenderObjectsBase\Textures\TilesetTexture.cs" />
+    <Compile Include="RenderObjects\Buffers\Base\Fbo.cs" />
+    <Compile Include="RenderObjects\Buffers\Base\RenderTargetManager.cs" />
+    <Compile Include="RenderObjects\Buffers\Base\StaticVBOFactory.cs" />
+    <Compile Include="RenderObjects\Buffers\Base\VAO.cs" />
+    <Compile Include="RenderObjects\Buffers\Base\Vbos.cs" />
+    <Compile Include="RenderObjects\Buffers\BasicFbo.cs" />
+    <Compile Include="RenderObjects\Buffers\BasicFboMultisample.cs" />
+    <Compile Include="RenderObjects\Buffers\Pbo.cs" />
     <Compile Include="RenderObjects\Effects\NoEffect.cs" />
     <Compile Include="RenderObjects\Effects\NoEffectOffset.cs" />
     <Compile Include="RenderObjects\Effects\NoEffectTex.cs" />
@@ -55,6 +82,9 @@
     <Compile Include="RenderObjects\Effects\SmokeEffect.cs" />
     <Compile Include="RenderObjects\Geometries\QuadTex.cs" />
     <Compile Include="Renderer\BasicGLRenderer.cs" />
+    <Compile Include="RenderRequestsBase\Base\IRenderRequestBaseInternal.cs" />
+    <Compile Include="RenderRequestsBase\Base\RenderRequestAttribute.cs" />
+    <Compile Include="RenderRequestsBase\Base\RenderRequestFactory.cs" />
     <Compile Include="RenderRequests\AvatarRenderRequests\ToolAvatarRR.cs" />
     <Compile Include="RenderRequests\AvatarRenderRequests\FovAvatarRR.cs" />
     <Compile Include="RenderRequests\Renderers\GameObjectPainter.cs" />
@@ -72,9 +102,9 @@
     <Compile Include="RenderRequests\PainterBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RenderingBase\RenderingBase.csproj">
+    <ProjectReference Include="..\RenderingBase\Strut_Render_Base.csproj">
       <Project>{272a6b2f-921a-4ac2-aced-a3e0f487954c}</Project>
-      <Name>RenderingBase</Name>
+      <Name>Strut_Render_Base</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Misc\TmxUtilities\TmxMapSerializer\TmxMapSerializer\TmxMapSerializer.csproj">
       <Project>{7a4d6fa1-e44b-40e2-9de8-3606dbc657d9}</Project>

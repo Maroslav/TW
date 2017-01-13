@@ -6,7 +6,6 @@ using System.Threading;
 using Game;
 using GoodAI.ToyWorld.Control;
 using OpenTK.Input;
-using RenderingBase.Renderer;
 using RenderingBase.RenderRequests;
 using Utils.VRageRIP.Lib.Extensions;
 using VRageMath;
@@ -21,7 +20,7 @@ namespace ToyWorldTests.Render
         private readonly GameControllerBase<ToyWorld> m_gameController;
 
         protected ToyWorld World { get { return m_gameController.World; } }
-        protected GLRenderer<ToyWorld> Renderer { get { return m_gameController.Renderer; } }
+        protected RenderingBase.Renderer.GLRenderer<ToyWorld> Renderer { get { return m_gameController.Renderer; } }
 
 
         public GLRendererTestBase()
