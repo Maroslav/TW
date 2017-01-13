@@ -77,6 +77,7 @@ namespace Game
             Renderer.Init();
             Renderer.CreateWindow("TestGameWindow", 1024, 1024);
             Renderer.CreateContext();
+            Renderer.Window.Visible = true;
 
             m_testRenderer = new Strut_Render_Vk.Renderer();
             m_testRenderer.WinHandle = Renderer.Window.WindowInfo.Handle;

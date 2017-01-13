@@ -23,6 +23,7 @@ namespace Strut_Render_Vk
         public override void Draw()
         {
             base.Draw();
+            p.DrawFrame();
         }
 
         public override void Dispose()
