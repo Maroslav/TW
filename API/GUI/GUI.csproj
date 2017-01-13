@@ -57,9 +57,9 @@
       <Project>{8c381b5a-3fd7-4311-9c42-f8115587e5fd}</Project>
       <Name>ToyWorldAPI</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Game\Simulation\Simulation.csproj">
-      <Project>{3831266c-24fe-4dd6-a4cc-39d0ef33c299}</Project>
-      <Name>Simulation</Name>
+    <ProjectReference Include="..\ToyWorldFactory\ToyWorldFactory.csproj">
+      <Project>{f59c62c1-a4e9-4ce7-b1c8-17375d4491d6}</Project>
+      <Name>ToyWorldFactory</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

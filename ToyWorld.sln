@@ -4,12 +4,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{91CAB9D9-3DFD-48E9-B2D1-1287AB378D9B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2262019C-35C4-466B-B39E-627DD24C0CD2}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Render-Legacy", "Rendering\Render\Render-Legacy.csproj", "{C1527127-DD8C-4076-A0A7-39EB2EF23787}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Render_Legacy", "Rendering\Render\Render_Legacy.csproj", "{C1527127-DD8C-4076-A0A7-39EB2EF23787}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Misc\Utils\Utils.csproj", "{772B1188-A00D-45FC-B352-834227ADAE96}"
 EndProject
@@ -27,7 +22,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TmxMapSerializer", "Misc\Tm
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{D484651D-9F00-4A5D-9F83-E8FFD456077A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strut-Render-Base", "Rendering\RenderingBase\Strut-Render-Base.csproj", "{272A6B2F-921A-4AC2-ACED-A3E0F487954C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strut_Render_Base", "Rendering\RenderingBase\Strut_Render_Base.csproj", "{272A6B2F-921A-4AC2-ACED-A3E0F487954C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Physics", "Game\Physics\Physics.csproj", "{06DAAD7F-AC1C-417E-A903-55FFB859E761}"
 EndProject
@@ -43,7 +38,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Game", "Game", "{94678757-3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{8A5CCFD1-C540-47E2-B8CD-A0459AD3DD9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strut-Render-Common", "Strut-Render-Common\Strut-Render-Common.csproj", "{83E38EBA-9D3A-402B-B863-77FA667F5926}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strut_Render_Common", "Strut-Render-Common\Strut_Render_Common.csproj", "{83E38EBA-9D3A-402B-B863-77FA667F5926}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strut_Render_Vk", "Strut-Render-Vk\Strut_Render_Vk.csproj", "{D2F507D1-2D52-446D-ADEF-9DF441715F9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +138,14 @@ Global
 		{83E38EBA-9D3A-402B-B863-77FA667F5926}.Release|Any CPU.Build.0 = Release|Any CPU
 		{83E38EBA-9D3A-402B-B863-77FA667F5926}.Release|TW GUI.ActiveCfg = Release|Any CPU
 		{83E38EBA-9D3A-402B-B863-77FA667F5926}.Release|TW GUI.Build.0 = Release|Any CPU
+		{D2F507D1-2D52-446D-ADEF-9DF441715F9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2F507D1-2D52-446D-ADEF-9DF441715F9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2F507D1-2D52-446D-ADEF-9DF441715F9D}.Debug|TW GUI.ActiveCfg = Debug|Any CPU
+		{D2F507D1-2D52-446D-ADEF-9DF441715F9D}.Debug|TW GUI.Build.0 = Debug|Any CPU
+		{D2F507D1-2D52-446D-ADEF-9DF441715F9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2F507D1-2D52-446D-ADEF-9DF441715F9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2F507D1-2D52-446D-ADEF-9DF441715F9D}.Release|TW GUI.ActiveCfg = Release|Any CPU
+		{D2F507D1-2D52-446D-ADEF-9DF441715F9D}.Release|TW GUI.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -162,5 +167,6 @@ Global
 		{6C22EAC9-88C1-495D-838D-95EE47E5424D} = {91CAB9D9-3DFD-48E9-B2D1-1287AB378D9B}
 		{94678757-3E0F-4F48-9637-D5E01C6B6F3D} = {91CAB9D9-3DFD-48E9-B2D1-1287AB378D9B}
 		{83E38EBA-9D3A-402B-B863-77FA667F5926} = {6C22EAC9-88C1-495D-838D-95EE47E5424D}
+		{D2F507D1-2D52-446D-ADEF-9DF441715F9D} = {6C22EAC9-88C1-495D-838D-95EE47E5424D}
 	EndGlobalSection
 EndGlobal

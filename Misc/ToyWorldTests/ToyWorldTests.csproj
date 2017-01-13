@@ -123,13 +123,13 @@
       <Project>{c61db58a-5374-48f3-9457-025a1693c8cc}</Project>
       <Name>Control</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Rendering\RenderingBase\Strut-Render-Base.csproj">
+    <ProjectReference Include="..\..\Rendering\RenderingBase\Strut_Render_Base.csproj">
       <Project>{272a6b2f-921a-4ac2-aced-a3e0f487954c}</Project>
-      <Name>Strut-Render-Base</Name>
+      <Name>Strut_Render_Base</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Rendering\Render\Render-Legacy.csproj">
+    <ProjectReference Include="..\..\Rendering\Render\Render_Legacy.csproj">
       <Project>{c1527127-dd8c-4076-a0a7-39eb2ef23787}</Project>
-      <Name>Render-Legacy</Name>
+      <Name>Render_Legacy</Name>
     </ProjectReference>
     <ProjectReference Include="..\TmxUtilities\TmxMapSerializer\TmxMapSerializer\TmxMapSerializer.csproj">
       <Project>{7A4D6FA1-E44B-40E2-9DE8-3606DBC657D9}</Project>
